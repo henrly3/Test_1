@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ssd_test"
+version = "0.1.0"
+description = "SATA SSD test program for Linux"
+requires-python = ">=3.9"
+
+[project.scripts]
+ssd_test = "ssd_test.cli:main"
+
+[tool.setuptools]
+packages = ["ssd_test"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
