@@ -47,4 +47,6 @@ N줄에 걸쳐 M개의 정수
 ## 체크 포인트
 - N·M이 최대 100만이므로 **재귀 DFS는 스택 오버플로** 위험이 있습니다(임베디드에서는 특히). BFS 또는 명시적 스택을 쓰세요.
 - `visited` 배열을 따로 두지 말고 원본을 0으로 덮어 메모리를 아낄 수도 있습니다.
-- 입력이 많으므로 `ios::sync_with_stdio(false); cin.tie(nullptr);` 또는 `scanf`를 사용하세요.
+- 입력이 많으므로 `scanf`를 사용하세요. (C++이라면 `ios::sync_with_stdio(false); cin.tie(nullptr);`)
+- C에서 1000×1000 배열(4MB)은 **전역 또는 static**으로 선언하세요. 지역 변수면 스택 오버플로입니다.
+- C에는 `queue`가 없으므로 `int q[N*M]` 배열과 `head`/`tail` 인덱스로 큐를 만드세요.
